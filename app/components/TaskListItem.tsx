@@ -3,6 +3,7 @@ import React, {useCallback} from 'react';
 import {deleteTask, TaskDetails, updateTask} from '../store/slices/taskSlice';
 import {Icon} from '@rneui/base';
 import {useDispatch} from 'react-redux';
+import Animated, {FadeInUp, SlideOutLeft} from 'react-native-reanimated';
 
 type Props = {
   task: TaskDetails;
@@ -50,28 +51,30 @@ const TaskListItem = ({task, onTaskPress}: Props) => {
   }, [dispatch, task]);
 
   return (
-    <TouchableOpacity onPress={onTaskPress} style={[styles.container]}>
-      <View style={styles.taskInfo}>
-        <View>
-          <Text style={styles.title}>{task.title}</Text>
-          <Text style={styles.desc}>{task.description}</Text>
+    <Animated.View entering={FadeInUp} exiting={SlideOutLeft}>
+      <TouchableOpacity onPress={onTaskPress} style={[styles.container]}>
+        <View style={styles.taskInfo}>
+          <View>
+            <Text style={styles.title}>{task.title}</Text>
+            <Text style={styles.desc}>{task.description}</Text>
+          </View>
+          <Text style={styles.urgency}>Priority: {task.urgency}</Text>
         </View>
-        <Text style={styles.urgency}>Priority: {task.urgency}</Text>
-      </View>
-      <View style={styles.buttons}>
-        <TouchableOpacity onPress={onCompletePress}>
-          <Icon
-            type="feather"
-            name={task.isCompleted ? 'circle' : 'check-circle'}
-            size={26}
-            color={task.isCompleted ? '#B9FBC0' : '#90DBF4'}
-          />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={onDeletePress}>
-          <Icon type="feather" name="trash" size={26} color="#F07167" />
-        </TouchableOpacity>
-      </View>
-    </TouchableOpacity>
+        <View style={styles.buttons}>
+          <TouchableOpacity onPress={onCompletePress}>
+            <Icon
+              type="feather"
+              name={task.isCompleted ? 'circle' : 'check-circle'}
+              size={26}
+              color={task.isCompleted ? '#B9FBC0' : '#90DBF4'}
+            />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={onDeletePress}>
+            <Icon type="feather" name="trash" size={26} color="#F07167" />
+          </TouchableOpacity>
+        </View>
+      </TouchableOpacity>
+    </Animated.View>
   );
 };
 

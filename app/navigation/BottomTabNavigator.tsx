@@ -19,7 +19,7 @@ export function BottomTabNavigator() {
                 type="material-community"
                 name="view-dashboard"
                 size={adjustedSize}
-                color={color}
+                color={focused ? '#FFB5A7' : color}
               />
             );
           } else if (route.name === 'Active') {
@@ -28,7 +28,7 @@ export function BottomTabNavigator() {
                 type="font-awesome-5"
                 name="tasks"
                 size={adjustedSize}
-                color={color}
+                color={focused ? '#B9FBC0' : color}
               />
             );
           } else if (route.name === 'Completed') {
@@ -37,13 +37,11 @@ export function BottomTabNavigator() {
                 type="material-community"
                 name="clipboard-check-multiple-outline"
                 size={adjustedSize}
-                color={color}
+                color={focused ? '#90DBF4' : color}
               />
             );
           }
         },
-        tabBarActiveTintColor: '#0081A7',
-        tabBarInactiveTintColor: '#90DBF4',
         headerShown: false,
         tabBarShowLabel: false,
       })}>

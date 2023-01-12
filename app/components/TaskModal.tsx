@@ -32,8 +32,6 @@ const TaskModal = ({visible, closeModal}: Props) => {
     (state: RootState) => state.task.selectedTask,
   );
 
-  console.log({selectedTask});
-
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [urgency, setUrgency] = useState<TaskDetails['urgency']>(1);

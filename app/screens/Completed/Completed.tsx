@@ -6,6 +6,7 @@ import TaskListItem from '../../components/TaskListItem';
 import {RootState} from '../../store/store';
 import TaskModal from '../../components/TaskModal';
 import {TaskDetails, selectTask} from '../../store/slices/taskSlice';
+import TaskListing from '../../components/TaskListing';
 
 type Props = {};
 
@@ -27,14 +28,7 @@ export const Completed = (props: Props) => {
   );
   return (
     <View style={styles.container}>
-      <FlatList
-        data={tasksList}
-        keyExtractor={item => item.id}
-        renderItem={({item}) => (
-          <TaskListItem onTaskPress={() => onTaskPress(item)} task={item} />
-        )}
-        contentContainerStyle={{paddingBottom: 100}}
-      />
+      <TaskListing data={tasksList} onTaskPress={onTaskPress} />
       <TaskModal
         visible={showTaskModal}
         closeModal={() => setShowTaskModal(false)}
@@ -47,5 +41,9 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#90DBF4',
     flex: 1,
+  },
+  listContainer: {
+    paddingBottom: 100,
+    paddingTop: 10,
   },
 });

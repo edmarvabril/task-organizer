@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Dashboard} from '../screens/Dashboard/Dashboard';
@@ -20,6 +21,11 @@ export function DashboardStack() {
         component={Dashboard}
         options={{
           headerTitle: 'Dashboard',
+          headerTitleStyle: {
+            color: '#FFB5A7',
+            fontWeight: '700',
+            letterSpacing: 1.1,
+          }
         }}
       />
     </Stack.Navigator>
@@ -34,8 +40,10 @@ export function ActiveStack() {
         component={Active}
         options={{
           headerTitle: 'Active Tasks',
-          headerStyle: {
-            backgroundColor: '#B9FBC0',
+          headerTitleStyle: {
+            color: '#B9FBC0',
+            fontWeight: '700',
+            letterSpacing: 1.1,
           }
         }}
       />
@@ -53,8 +61,10 @@ export function CompletedStack() {
         component={Completed}
         options={{
           headerTitle: 'Completed Tasks',
-          headerStyle: {
-            backgroundColor: '#90DBF4',
+          headerTitleStyle: {
+            color: '#90DBF4',
+            fontWeight: '700',
+            letterSpacing: 1.1,
           }
         }}
       />

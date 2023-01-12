@@ -9,6 +9,7 @@ import TaskListItem from '../../components/TaskListItem';
 import {Icon} from '@rneui/base';
 import TaskModal from '../../components/TaskModal';
 import {selectTask, TaskDetails} from '../../store/slices/taskSlice';
+import TaskListing from '../../components/TaskListing';
 
 type Props = {};
 
@@ -31,14 +32,7 @@ export const Active = (props: Props) => {
 
   return (
     <View style={styles.container}>
-      <FlatList
-        data={tasksList}
-        keyExtractor={item => item.id}
-        renderItem={({item}) => (
-          <TaskListItem onTaskPress={() => onTaskPress(item)} task={item} />
-        )}
-        contentContainerStyle={{paddingBottom: 100}}
-      />
+      <TaskListing data={tasksList} onTaskPress={onTaskPress} />
       <TouchableOpacity
         onPress={() => setShowTaskModal(true)}
         style={styles.addButton}>
@@ -67,5 +61,9 @@ const styles = StyleSheet.create({
     position: 'absolute',
     bottom: 10,
     right: 10,
+  },
+  listContainer: {
+    paddingBottom: 100,
+    paddingTop: 10,
   },
 });
