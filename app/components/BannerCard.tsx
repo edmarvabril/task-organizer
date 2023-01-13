@@ -5,7 +5,7 @@ import {daysOfWeek, months} from '../constants/dates';
 
 type Props = {};
 
-const BannerCard = (props: Props) => {
+const BannerCard = ({}: Props) => {
   const today = new Date();
   const dayOfWeek = daysOfWeek[today.getDay()];
   const month = months[today.getMonth()];

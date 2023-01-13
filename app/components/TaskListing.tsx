@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import {FlatList, Pressable, StyleSheet, Text, View} from 'react-native';
 import React, {useMemo, useState} from 'react';
 import {sortBy} from 'lodash';

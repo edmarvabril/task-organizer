@@ -1,11 +1,8 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import React, {useCallback, useState} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import {useSelector, useDispatch} from 'react-redux';
 
 import {RootState} from '../../store/store';
-import {FlatList} from 'react-native-gesture-handler';
-import TaskListItem from '../../components/TaskListItem';
 import {Icon} from '@rneui/base';
 import TaskModal from '../../components/TaskModal';
 import {selectTask, TaskDetails} from '../../store/slices/taskSlice';
@@ -13,7 +10,7 @@ import TaskListing from '../../components/TaskListing';
 
 type Props = {};
 
-export const Active = (props: Props) => {
+export const Active = ({}: Props) => {
   const dispatch = useDispatch();
 
   const tasksList = useSelector((state: RootState) =>

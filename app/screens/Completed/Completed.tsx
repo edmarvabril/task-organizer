@@ -1,8 +1,6 @@
-import {FlatList, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React, {useCallback, useState} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
 import {useDispatch, useSelector} from 'react-redux';
-import TaskListItem from '../../components/TaskListItem';
 import {RootState} from '../../store/store';
 import TaskModal from '../../components/TaskModal';
 import {TaskDetails, selectTask} from '../../store/slices/taskSlice';
@@ -10,7 +8,7 @@ import TaskListing from '../../components/TaskListing';
 
 type Props = {};
 
-export const Completed = (props: Props) => {
+export const Completed = ({}: Props) => {
   const dispatch = useDispatch();
 
   const tasksList = useSelector((state: RootState) =>

@@ -1,6 +1,5 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React, {useMemo} from 'react';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import {StyleSheet, View} from 'react-native';
+import React from 'react';
 import BannerCard from '../../components/BannerCard';
 import {useSelector} from 'react-redux';
 import {RootState} from '../../store/store';
@@ -8,7 +7,7 @@ import TaskCountCard from '../../components/TaskCountCard';
 
 type Props = {};
 
-export const Dashboard = (props: Props) => {
+export const Dashboard = ({}: Props) => {
   const allTasks = useSelector((state: RootState) => state.task.tasks);
 
   const totalTasksCount = allTasks.length;

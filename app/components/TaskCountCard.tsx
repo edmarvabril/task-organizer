@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     marginHorizontal: 10,
     alignItems: 'center',
-    justifyContent: 'space-evenly'
+    justifyContent: 'space-evenly',
   },
   label: {
     fontSize: 20,
@@ -47,5 +47,5 @@ const styles = StyleSheet.create({
       width: 0.2,
     },
     textShadowColor: 'dimgrey',
-  }
+  },
 });

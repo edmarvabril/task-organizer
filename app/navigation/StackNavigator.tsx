@@ -25,7 +25,7 @@ export function DashboardStack() {
             color: '#FFB5A7',
             fontWeight: '700',
             letterSpacing: 1.1,
-          }
+          },
         }}
       />
     </Stack.Navigator>
@@ -44,7 +44,7 @@ export function ActiveStack() {
             color: '#B9FBC0',
             fontWeight: '700',
             letterSpacing: 1.1,
-          }
+          },
         }}
       />
     </Stack.Navigator>
@@ -65,7 +65,7 @@ export function CompletedStack() {
             color: '#90DBF4',
             fontWeight: '700',
             letterSpacing: 1.1,
-          }
+          },
         }}
       />
     </Stack.Navigator>

@@ -1,7 +1,6 @@
 import * as React from 'react';
-import {Text, View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Button, Icon} from '@rneui/base';
+import {Icon} from '@rneui/base';
 import {ActiveStack, DashboardStack, CompletedStack} from './StackNavigator';
 
 const Tab = createBottomTabNavigator();
